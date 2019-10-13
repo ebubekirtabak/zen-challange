@@ -1,20 +1,10 @@
 <template>
     <div class="news-section">
         <b-row>
-            <b-col cols="3" md="3">
-                <NewsCard />
-            </b-col>
-            <b-col cols="3" md="3">
-                <NewsCard />
-            </b-col>
-            <b-col cols="3" md="3">
-                <NewsCard />
-            </b-col>
-            <b-col cols="3" md="3">
-                <NewsCard />
+            <b-col cols="3" md="3" v-for="article in articles" v-bind:key="article.id">
+                <NewsCard v-bind:article="article" />
             </b-col>
         </b-row>
-        
     </div>
 </template>
 
@@ -27,7 +17,7 @@ export default {
       NewsCard
   },
   props: {
-    msg: String
+    articles: Array
   }
 }
 </script>
