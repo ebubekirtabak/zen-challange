@@ -2,7 +2,7 @@
   <div class="home">
     <b-container>
       <Carousel/>
-      <NewsSection/>
+      <NewsSection v-bind:articles="articles"/>
       <WhatsAppInfo/>
     </b-container>
     {{ url }}
@@ -22,10 +22,16 @@ export default {
     WhatsAppInfo
   },
   mounted() {
+    axios
+    .get(this.url)
+    .then(response => (this.articles = response.data.articles))
+    .catch(error => this.error = error)
   },
   data() {
     return {
-      url: process.env.NEWS_API_URL
+      url: process.env.VUE_APP_NEWS_API_URL,
+      error: '',
+      articles: []
     }
   }
 }
