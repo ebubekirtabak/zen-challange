@@ -42,7 +42,15 @@ export default {
     }
 
     &__footer {
-        padding: 10px 0;
+        padding: 10px 10px;
+
+        &__description {
+            font-size: 10px;
+            font-family: 'Avenir', Helvetica, Arial, sans-serif;
+            text-align: left;
+            height: 60px;
+            overflow: hidden;
+        }
     }
 }
 </style>
