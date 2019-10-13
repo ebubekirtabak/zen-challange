@@ -51,19 +51,28 @@
         </p>
       </b-carousel-slide>
     </b-carousel>
-
-    <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Carousel',
+  data() {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
   props: {
     msg: String
+  },
+  methods: {
+    onSlideStart() {
+      this.sliding = true
+    },
+    onSlideEnd() {
+      this.sliding = false
+    }
   }
 }
 </script>
