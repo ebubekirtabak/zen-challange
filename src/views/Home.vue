@@ -2,16 +2,18 @@
   <div class="home">
     <b-container>
       <Carousel/>
-      <NewsSection v-bind:articles="articles"/>
+      <NewsSection v-bind:articles="articles" v-bind:title="'Trends'"/>
       <WhatsAppInfo/>
+      <GridSection v-bind:articles="gridSectionArticles" v-bind:highlight="highligthArticle"/>
+      <NewsSection v-bind:articles="moneynewsArticles" v-bind:title="'Money'"/>
     </b-container>
-    {{ url }}
   </div>
 </template>
 
 <script>
 import Carousel from '@/components/Carousel.vue'
 import NewsSection from "@/components/NewsSection.vue"
+import GridSection from "@/components/GridSection.vue"
 import WhatsAppInfo from '@/components/WhatsAppInfo.vue'
 import ApiService from '@/services/api.service'
 
