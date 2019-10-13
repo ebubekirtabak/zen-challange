@@ -6,7 +6,11 @@
                 {{ article.title }}
             </div>
         </div>
-        <div class="news-card__footer"></div>
+        <div class="news-card__footer">
+            <div class="news-card__footer__description">
+                {{ article.description }}
+            </div>
+        </div>
     </div>
 </template>
 
