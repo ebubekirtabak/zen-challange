@@ -1,11 +1,12 @@
 <template>
     <div class="news-card">
         <div class="news-card__head">
-            <img class="news-card__head__image" src="https://4.bp.blogspot.com/-TBYj-oM-Stk/WyRR5b6JerI/AAAAAAAAojQ/yhKWgTVQFQQHuHbkS3MPmWde8yrItooygCLcBGAs/s1600/playerunknowns-battlegrounds-kasma-sorunu-troubleshooter01blogspot.jpg"/>
+            <img class="news-card__head__image" v-bind:style="{ 'background-image': `url(${article.urlToImage})` }"/>
             <div class="news-card__head__title">
-                League of Legends: Riot Point
+                {{ article.title }}
             </div>
         </div>
+        <div class="news-card__footer"></div>
     </div>
 </template>
 
@@ -13,7 +14,7 @@
 export default {
   name: 'NewsCard',
   props: {
-    msg: String
+    article: Object
   }
 }
 </script>
@@ -27,19 +28,21 @@ export default {
     &__head {
         &__image {
             width: 100%;
-            height: auto;
+            height: 133px;
+            background-size: cover;
         }
 
         &__title {
-            margin: 10px 0;
-            font-size: 13px;
+            margin: 10px 0 10px 10px;
+            font-size: 11px;
             font-family: 'Avenir', Helvetica, Arial, sans-serif;
             text-align: left;
+            height: 32px;
         }
     }
 
     &__footer {
-        
+        padding: 10px 0;
     }
 }
 </style>
