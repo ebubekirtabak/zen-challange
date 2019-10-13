@@ -2,7 +2,7 @@
   <div class="news-section">
     <b-row>
       <b-col cols="12" md="6" >
-        <NewsCard v-if="highlightNews != null" v-bind:article="highlightNews" />
+        <NewsCard v-bind:article="highlight" v-bind:isBigView="true"/>
       </b-col>
       <b-col cols="12" md="6">
         <b-row>
@@ -29,11 +29,8 @@ export default {
     NewsCard
   },
   props: {
-    articles: Array
-  },
-  mounted() {
-    this.highlightNews = this.articles[0]
-    this.articles = this.articles.slice(1, this.articles.length)
+    articles: Array,
+    highlight: Object
   }
 }
 </script>
